@@ -1,0 +1,61 @@
+<mvc:View controllerName="project1.controller.View3"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:form="sap.ui.layout.form"
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        xmlns:f="sap.f"
+        xmlns:fb="sap.ui.comp.filterbar"
+        xmlns:svm="sap.ui.comp.smartvariants">
+<f:DynamicPage showFooter="true">
+<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="{argomento>/action} ORDINE"/>
+					</f:heading>
+					
+				</f:DynamicPageTitle>
+			</f:title>
+    <f:header>
+    
+        <f:DynamicPageHeader pinnable="false" >
+        
+            <f:content>
+                <Label text="Ordine Selezionato {argomento>/id_ordine}"></Label>
+            </f:content>      
+        </f:DynamicPageHeader>
+    </f:header>
+<f:content>
+    <HBox 
+    justifyContent="Center" 
+    alignItems="Center" 
+    height="50vh"
+    >
+    <VBox  alignContent="Center" direction="Column" justifyContent="Center"  width="100vh" >
+        <Label text="ID ORDINE"/>
+         <Input value="{argomento>/id_ordine}" id="id_ordine" editable="true" valueState="None"></Input>
+         <Label text="TIPOLOGIA ORDINE"/>
+         <Input value="{argomento>/tipo}" id="tipo" valueState="None"></Input>
+         <Label text="DATA ORDINE"/>
+         <Input value="{argomento>/data_ordine}" id="data_ordine" valueState="None" type="Date"></Input>
+         <Label text="QUANTITA'"/>
+         <Input value="{argomento>/quantita}" id="quantita"></Input>
+   
+            
+        </VBox>
+    </HBox>
+</f:content>
+
+<f:footer >
+    <Toolbar>
+        <ToolbarSpacer />
+            <Button text="SAVE" type="Accept" press="OnSave"
+                icon="sap-icon://accept" 
+            />
+
+        </Toolbar>
+</f:footer>
+
+
+
+</f:DynamicPage>
+</mvc:View>

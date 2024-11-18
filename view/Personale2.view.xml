@@ -1,0 +1,64 @@
+<mvc:View controllerName="project1.controller.Personale2"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:form="sap.ui.layout.form"
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        xmlns:f="sap.f"
+        xmlns:fb="sap.ui.comp.filterbar"
+        xmlns:svm="sap.ui.comp.smartvariants">
+<f:DynamicPage showFooter="true">
+<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="{argomento>/action} Personale"/>
+					</f:heading>
+					
+				</f:DynamicPageTitle>
+			</f:title>
+    <f:header>
+    
+        <f:DynamicPageHeader pinnable="false" >
+        
+            <f:content>
+                <Label  text="Personale Selezionato {argPers>/ID}"></Label>
+            </f:content>      
+        </f:DynamicPageHeader>
+    </f:header>
+<f:content>
+    <HBox 
+    justifyContent="Center" 
+    alignItems="Center" 
+    height="50vh"
+    >
+    <VBox  alignContent="Center" direction="Column" justifyContent="Center"  width="100vh" >
+        <Input visible="false" value="{argPers>/ID}" id="ID"/>
+        <Label text="Nome"/>
+         <Input value="{argPers>/nome}" id="nome" editable="true" valueState="None"></Input>
+         <Label text="Cognome"/>
+         <Input value="{argPers>/cognome}" id="cognome" valueState="None"></Input>
+         <Label text="Email"/>
+         <Input value="{argPers>/email}" id="email" valueState="None" ></Input>
+         <Label text="Telefono"/>
+         <Input value="{argPers>/tel}" id="tel"></Input>
+         <Label text="Patentino"/>
+         <Input value="{argPers>/patentino}" id="patentino"></Input>
+   
+            
+        </VBox>
+    </HBox>
+</f:content>
+
+<f:footer >
+    <Toolbar>
+        <ToolbarSpacer />
+            <Button text="SAVE" type="Accept" press="OnSave"
+                icon="sap-icon://accept" 
+            />
+
+        </Toolbar>
+</f:footer>
+
+
+
+</f:DynamicPage>
+</mvc:View>

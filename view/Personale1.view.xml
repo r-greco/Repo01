@@ -1,0 +1,120 @@
+<mvc:View controllerName="project1.controller.Personale1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+    xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:svm="sap.ui.comp.smartvariants">
+	
+	<f:DynamicPage backgroundDesign="Transparent" showFooter="true" headerPinned="true" >
+			<f:title >
+				<f:DynamicPageTitle >
+					<f:heading>
+						<Title text="PERSONALE"/>
+					</f:heading>
+					
+				</f:DynamicPageTitle>
+			</f:title>
+			<f:header >
+				<f:DynamicPageHeader  backgroundDesign="Solid" >
+					<f:content>
+						
+						<fb:FilterBar showFilterConfiguration="false" showGoOnFB="false" id="filterbarP"  useToolbar="false" search=".onSearch" filterChange=".onFilterChange"  >
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="Name"  groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+											<SearchField  id="SearchP" width="100%" search=".onFilterPost" liveChange=".onLivePost" />
+				
+										
+									</fb:control>
+									
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			
+			
+		
+     		
+    
+			
+
+	<f:content>
+	<Table id="TableP"  
+		
+		items="{getPers>/}"
+		mode="MultiSelect">
+		
+		
+		<infoToolbar>
+			<OverflowToolbar>
+			
+            <ToolbarSpacer />
+				
+			
+                <Button press="OnPage3" icon="sap-icon://add"/>  
+                <Button id="showdelP" icon="sap-icon://delete"  press="onDelete" />
+			</OverflowToolbar>
+		</infoToolbar>
+        
+		<columns >
+			<Column
+				width="12em" hAlign="Begin">
+				
+				<Text text="ID" />
+			</Column>
+			<Column
+				width="12em" hAlign="Center">
+				
+				<Text text="NOME" />
+			</Column>
+			<Column
+                width="12em" hAlign="Center"
+				>
+				<Text text="COGNOME" />
+			</Column>
+            	<Column width="12em" hAlign="Center"
+				>
+				<Text text="TELEFONO" />
+			</Column>
+			<Column
+				width="12em" hAlign="Center"
+				>
+				<Text text="EMAIL" />
+			</Column>
+            <Column
+				width="12em" hAlign="Center"
+				>
+				<Text text="PATENTINO" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem  type="Navigation" press="OnPage3" >
+				<cells>
+					
+					<Text
+						text="{getPers>ID}" />
+					<Text
+						text="{getPers>nome}" />
+					<Text
+						text="{getPers>cognome}" />
+                    <Text
+						text="{getPers>email}" />
+                    <Text
+						text="{getPers>tel}" />
+                    <Text
+						text="{getPers>patentino}" />
+						
+					
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</f:content>
+   
+</f:DynamicPage>   
+</mvc:View>
